@@ -24,11 +24,11 @@ function EnemyHorizontal(x,y, height){
 function EnemyVertical(x,y, height){
     x = x*50 + 25;
     y = height - y*50 - 25;
-    this.sprite = createSprite(x,y,25,25);
+    this.sprite = createSprite(x,y,215,200);
     this.dir = 1;
     this.sprite.addAnimation("stand", "assets/enemy.png");
-    this.sprite.scale = 2;
-    this.sprite.setCollider("rectangle",0,0,25,25);
+    this.sprite.scale = 0.2;
+    this.sprite.setCollider("rectangle",0,0,215,200);
     this.counter = counter;
     this.update = function(){
         this.counter--;
