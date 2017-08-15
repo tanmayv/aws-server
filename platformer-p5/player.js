@@ -22,7 +22,7 @@ function Player(x,y){
     this.jumping = false;
     this.inAir;
     this.playerState = this.standState;
-    this.sprite.debug = true;
+    
     this.update = function(){
        
         if(!this.sprite.touching.bottom){

@@ -16,5 +16,4 @@ function Ground(x1,y1,x2,y2, height){
     this.sprite = createSprite(x1 + (x2-x1)/2,y1 + (y2-y1)/2,0, 0);
     this.sprite.immovable =true;
     this.sprite.setCollider("rectangle",0,0,x2-x1 + 50,y2-y1 + 50);
-    this.sprite.debug = true;
 }

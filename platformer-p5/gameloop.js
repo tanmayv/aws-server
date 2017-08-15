@@ -24,7 +24,7 @@ function draw(){
     
     player.update();
     currentLevel.update();
-    followPlayer();
+    
     currentLevel.enemiesGroup.collide(currentLevel.terrainGroup);
     player.sprite.collide(currentLevel.enemiesGroup, function(p,e){
         if(player.playerState.stateLabel == 'dashing'){
@@ -33,6 +33,7 @@ function draw(){
             resetPlayer();
         }
     })
+    followPlayer();
     drawSprites(); 
 }
 
