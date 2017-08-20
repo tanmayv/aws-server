@@ -1,6 +1,6 @@
 function Ground(x1,y1,x2,y2, height){
 
-    var img = loadImage("assets/grass.png");
+    var img = loadImage("assets/grassMid.png");
     x1 = x1*50 + 25;
     y1 = height - y1*50 - 25;
     x2 = x1 + (x2-1) * 50;

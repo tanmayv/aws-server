@@ -6,7 +6,7 @@ function Door(x,y){
     this.sprite.setCollider("rectangle",0,20,150,200)
     this.sprite.debug = true;
 }
-function Level1(width, height){
+function Level2(width, height){
     this.terrainGroup = new Group();
     this.enemiesGroup = new Group();
     this.army = [];
@@ -62,6 +62,35 @@ function Level1(width, height){
         this.terrainGroup.add(ground.sprite);
         ground = new Ground(0,12,5,1,height);
         this.terrainGroup.add(ground.sprite);
+        
+    }
+    this.update = function(){
+        for(var i =0; i < this.army.length; i++){
+            this.army[i].update();
+        }
+    }
+}
+
+function Level1(width,height){
+    this.terrainGroup = new Group();
+    this.enemiesGroup = new Group();
+    this.army = [];
+    this.door;
+    this.generate = function(){
+        this.door = new Door(90,height - 700);
+        var ground = new Ground(0,0,8,1,height);
+        this.terrainGroup.add(ground.sprite);
+
+        ground = new Ground(10,0,9,1,height);
+        this.terrainGroup.add(ground.sprite);
+
+        ground = new Ground(15,2,4,2,height);
+        this.terrainGroup.add(ground.sprite);
+        ground = new Ground(17,4,2,2,height);
+        this.terrainGroup.add(ground.sprite);
+        
+        this.door = new Door(18*50 + 1,height - 300);
+        
         
     }
     this.update = function(){

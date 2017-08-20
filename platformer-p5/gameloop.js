@@ -17,8 +17,8 @@ function draw(){
         resetPlayer();
     }
     player.sprite.overlap(currentLevel.door.sprite, function(p,d){
-        player.sprite.addSpeed(50,-45);
-        alert("Level Complete!");
+        resetPlayer();
+        loadNextLevel();
     })
     player.sprite.collide(currentLevel.terrainGroup);
     
@@ -53,4 +53,12 @@ function followPlayer(){
 function resetPlayer(){
     player.sprite.position.x = 50;
     player.sprite.position.y = height - 200;
+}
+
+function loadNextLevel(){
+    allSprites.clear();
+    player = new Player(50,height- 200);
+    currentLevel = new Level2(width, height);
+    currentLevel.generate();
+
 }
